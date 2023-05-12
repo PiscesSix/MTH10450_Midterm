@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{accents}
+\usepackage{bbm}
+\pagestyle{fancy}
+\setlength{\headheight}{40pt}
+
+\begin{document}
+
+\lhead{Nguyen Minh Tri $-$ 21110417} 
+\rhead{Thuat toan toi uu} 
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\begin{tcolorbox}
+\textbf{Các chứng minh trên lớp có đề cập:} (riêng phần nghiệm tối ưu thầy lướt hơi nhanh nên không để ý @@)
+\begin{enumerate}
+	\item Chứng minh đạo hàm theo hướng, mệnh đề $1.2$ (Trang $14$), quyển 1
+	\item Chứng minh nếu $f$ là hàm afin $(f(x) = \langle c,x \rangle + \alpha)$ thì:
+	$$
+		\forall x, y \in \mathbb{R}^n, \forall \lambda, \mu \in \mathbb{R} \text{ mà } \lambda + \mu = 1 \Rightarrow f(\lambda x + \mu y) = \lambda f(x) + \mu f(y)
+	$$
+	Chứng minh:
+		\begin{align*}
+			f(\lambda x + \mu y) &= \langle c, \lambda x + \mu y\rangle + \alpha \\
+								 &= \langle c, \lambda x\rangle + \langle c, \mu y \rangle + \alpha \\
+								 &= \lambda \langle c,x\rangle  + \mu \langle c,y \rangle + (\lambda + \mu)\alpha  \\
+								 &= \lambda \langle c,x\rangle + \lambda\alpha + \mu \langle c,y \rangle + \mu\alpha \\
+								 &= \lambda f(x) + \mu f(y)
+		\end{align*}
+\end{enumerate}
+\end{tcolorbox}
+\section{Lý thuyết + Bài tập}
+\begin{enumerate}
+	\item Nêu định nghĩa tập afine, lồi, hàm lồi và các tính chất cơ bản
+	\begin{itemize}
+		\item Tập afin: Nếu $M$ chứa trọn cả \textbf{đường thẳng} đi qua hai điểm bất kì thuộc $M$, tức là:
+		$$
+			\forall x_1, x_2 \in M, \; \lambda \in \mathbb{R} \Rightarrow \lambda x_1 + (1-\lambda)x_2 \in M
+		$$
+		\begin{itemize}
+			\item Tổ hợp afin:
+			$$
+				x = \sum_{i=1}^k \lambda_i x_i \quad \lambda_1,\dots,\lambda_k \in \mathbb{R} \text{ và } \sum_{i=1}^k \lambda_i = 1
+			$$
+			\item Bao afin của $E$: Giao của tất cả các tập afin chứa $E$, cũng là tập afin nhỏ nhất chứa $E$, ký hiệu aff$E$
+		\end{itemize}				
+		
+		\item Tập lồi: Nếu nó chứa trọn \textbf{đoạn thẳng} nối hai điểm bất kỳ thuộc nó, tức:
+		$$
+			\forall x_1, x_2 \in M, \; 0 \leq \lambda  \leq 1: \; \lambda x_1 + (1-\lambda)x_2 \in M
+		$$
+		\begin{itemize}
+			\item Nếu $M$ là tập lồi thì $\alpha M$ cũng là tập lồi.
+			\item Nếu $M_1, M_2$ là hai tập lồi thì $M_1 + M_2$ cũng là tập lồi.
+			\item Một tập là tập lồi khi và chỉ khi nó chứa tất cả các tổ hợp lồi của những phần tử thuộc nó.
+			\item Tổ hợp lồi:
+			$$
+				x = \sum_{i=1}^k \lambda_i x_i \quad \lambda_1,\dots,\lambda_k \geq 0 \text{ và } \sum_{i=1}^k \lambda_i = 1
+			$$
+		\end{itemize}				
+		
+		\item Hàm lồi: Hàm $f$ được xác định trên tập $X \subset \mathbb{R}^n:$
+		$$
+			f(\lambda x_1 + (1-\lambda)x_2) \leq \lambda f(x_1) + (1-\lambda)f(x_2)
+		$$
+		\item Các tính chất của hàm lồi:
+		\begin{enumerate}
+			\item Hàm lồi thì epif là tập lồi 
+			\item $f$ là hàm lồi thì tập mức dưới $L_\alpha (f)$ cũng là tập lồi với mọi $\alpha \in \mathbb{R}$
+			\item $f'(x_0,d) \leq f(x_0 +d) - f(x_0)$
+			\item $f$ khả vi trên tập lồi mở:
+			$$
+				f(y) - f(x) \geq \langle \nabla f(x), y-x\rangle
+			$$
+			\item Ma trận Hesse nửa xác định dương (xác định dương thì bỏ dấu $=$):
+			$$
+				y^T \nabla^2 f(x) y \geq 0 \quad \forall y \in \mathbb{R}^n
+			$$
+			\item Cho hàm toàn phương:
+			$$
+				f(x) = \frac{1}{2} \langle x, Qx \rangle + \langle x,a \rangle + \alpha
+			$$
+			khi đó, $f$ là hàm lồi khi $Q$ là ma trận nửa xác định dương.
+		\end{enumerate}
+	\end{itemize}
+	\item[]
+		\begin{tcolorbox}
+			Một số bài tập: bài 1, 2, 3, 13, 14, 15, \textbf{16, 17}, 19, 20 (Trang 36 $-$ 38).
+		\end{tcolorbox}
+	\item Với dữ kiện đã cho, phát biểu mô hình bài toán tối ưu (Trong sách có đề cập, chương 2, trang 39 $-$ 50).
+	\item Phát biểu điều kiện cần và điền kiện đủ của sự tồn tại điểm cực tiểu của bài toán khả vi không ràng buộc.
+	\begin{itemize}
+		\item Điều kiện cần: Cho $f$ xác định, khả vi trên $\mathbb{R}^n$. Nếu $x^* \in \mathbb{R}^n$ là nghiệm cực tiểu địa phương của bài toán ($P^{krb}$) thì $\nabla f(x^*) = 0.$
+		\item Điều kiện đủ: Giả sử $f$ khả vi liên tục hai lần trên $\mathbb{R}^n.$ Khi đó:
+		\begin{itemize}
+			\item Nếu $x^* \in \mathbb{R}^n$ là điểm cực tiểu địa phương của $f$ trên $\mathbb{R}^n$ khi:
+			\begin{align*}
+				&\nabla f(x^*) = 0 \\
+				&\nabla^2 f(x^*) \text{ nửa xác định dương}	
+			\end{align*}
+			\item Trong trường hợp $\nabla^2 f(x^*)$ xác định dương thì $x^*$ là điểm cực tiểu địa phương chặt của $f$.
+		\end{itemize}
+	\end{itemize}
+	\item Trình bày thuật toán gradient với thủ tục tìm chính xác theo tia và thủ tục quay lùi. (Xem lại các bước trong sách trang 231, quyển 2).
+	\item[]
+		\begin{tcolorbox}
+			Một số bài tập: bài 5, 6, \textbf{7, 11} (Trang 289 $-$ 291).
+		\end{tcolorbox}
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
